@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import WebKit
 
 class CPYLoginViewController: UIViewController {
 
+    let webView = WKWebView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func actionLogin(sender: UIButton) {
-    
+        
     }
 }

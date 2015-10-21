@@ -33,3 +33,5 @@ Icon
 *.dSYM.zip
 Gemfile.lock
 
+Pods/*
+

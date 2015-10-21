@@ -8,6 +8,7 @@ target :instacopy, :exclusive => true do
     xcodeproj 'instacopy/instacopy'
     link_with 'instacopy'
 
-    pod 'InstagramKit', '~> 3.6'
+    pod 'InstagramKit', '~> 3.6' ,:inhibit_warnings => true
+	pod 'InstagramKit/UICKeyChainStore',:inhibit_warnings => true
 end
 

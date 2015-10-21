@@ -1,0 +1,42 @@
+PODS:
+  - AFNetworking (2.6.1):
+    - AFNetworking/NSURLConnection (= 2.6.1)
+    - AFNetworking/NSURLSession (= 2.6.1)
+    - AFNetworking/Reachability (= 2.6.1)
+    - AFNetworking/Security (= 2.6.1)
+    - AFNetworking/Serialization (= 2.6.1)
+    - AFNetworking/UIKit (= 2.6.1)
+  - AFNetworking/NSURLConnection (2.6.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.1)
+  - AFNetworking/Security (2.6.1)
+  - AFNetworking/Serialization (2.6.1)
+  - AFNetworking/UIKit (2.6.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - InstagramKit (3.6.9):
+    - AFNetworking (~> 2.0)
+    - InstagramKit/Exclude-UICKeyChainStore (= 3.6.9)
+  - InstagramKit/Exclude-UICKeyChainStore (3.6.9):
+    - AFNetworking (~> 2.0)
+  - InstagramKit/UICKeyChainStore (3.6.9):
+    - AFNetworking (~> 2.0)
+    - UICKeyChainStore (~> 2.0)
+  - UICKeyChainStore (2.0.7)
+
+DEPENDENCIES:
+  - InstagramKit (~> 3.6)
+  - InstagramKit/UICKeyChainStore
+
+SPEC CHECKSUMS:
+  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  InstagramKit: 1f937c5c4b8469fd00a31e235d5e7d3e256ffe5d
+  UICKeyChainStore: 696cd35083f7c8fb5e201d909b7e6aea6b478575
+
+COCOAPODS: 0.39.0
