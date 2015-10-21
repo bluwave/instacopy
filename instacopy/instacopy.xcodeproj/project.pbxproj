@@ -18,6 +18,7 @@
 		27276A6F1BD777E6005F938A /* CPYLoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A6E1BD777E6005F938A /* CPYLoginInteractorTests.swift */; settings = {ASSET_TAGS = (); }; };
 		27276A701BD779FA005F938A /* CPYLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A6B1BD77614005F938A /* CPYLoginInteractor.swift */; settings = {ASSET_TAGS = (); }; };
 		27276A731BD77AC6005F938A /* CPYInstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A721BD77AC6005F938A /* CPYInstagramManager.swift */; settings = {ASSET_TAGS = (); }; };
+		27276A791BD7F9E8005F938A /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A781BD7F9E8005F938A /* UIView+AutoLayout.swift */; settings = {ASSET_TAGS = (); }; };
 		58BF38280C8D4EAF08B57F07 /* libPods-instacopy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EE7BD119A7D2233D42144A /* libPods-instacopy.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		27276A6E1BD777E6005F938A /* CPYLoginInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYLoginInteractorTests.swift; sourceTree = "<group>"; };
 		27276A721BD77AC6005F938A /* CPYInstagramManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYInstagramManager.swift; sourceTree = "<group>"; };
 		27276A741BD77BA7005F938A /* instacopy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "instacopy-Bridging-Header.h"; sourceTree = "<group>"; };
+		27276A781BD7F9E8005F938A /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		37EE7BD119A7D2233D42144A /* libPods-instacopy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instacopy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9C8547F3E9D3780B48ECCD /* Pods-instacopy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instacopy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-instacopy/Pods-instacopy.release.xcconfig"; sourceTree = "<group>"; };
 		B869B38E562C41CEC27BBD43 /* Pods-instacopy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instacopy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-instacopy/Pods-instacopy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		27276A441BD74F7C005F938A /* instacopy */ = {
 			isa = PBXGroup;
 			children = (
+				27276A751BD7F82D005F938A /* extensions */,
 				27276A711BD77AA6005F938A /* instagram support */,
 				27276A6A1BD775FC005F938A /* interactors */,
 				27276A691BD7553A005F938A /* XIBs */,
@@ -158,6 +161,14 @@
 				27276A721BD77AC6005F938A /* CPYInstagramManager.swift */,
 			);
 			name = "instagram support";
+			sourceTree = "<group>";
+		};
+		27276A751BD7F82D005F938A /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27276A781BD7F9E8005F938A /* UIView+AutoLayout.swift */,
+			);
+			name = extensions;
 			sourceTree = "<group>";
 		};
 		A1D5265F7A4510587CE11286 /* viewControllers */ = {
@@ -328,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27276A791BD7F9E8005F938A /* UIView+AutoLayout.swift in Sources */,
 				27276A481BD74F7C005F938A /* ViewController.swift in Sources */,
 				27276A461BD74F7C005F938A /* AppDelegate.swift in Sources */,
 				27276A671BD7552D005F938A /* CPYLoginViewController.swift in Sources */,

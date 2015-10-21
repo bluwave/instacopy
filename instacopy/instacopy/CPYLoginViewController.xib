@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPYLoginViewController" customModule="instacopy" customModuleProvider="target">
@@ -14,98 +13,8 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTD-HI-Ife">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dex-6k-nkN" userLabel="container">
-                            <rect key="frame" x="0.0" y="5" width="600" height="590"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Xg-6x-P3B">
-                                    <rect key="frame" x="30" y="136" width="540" height="200"/>
-                                    <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSo-Of-IY5">
-                                            <rect key="frame" x="0.0" y="20" width="540" height="30"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                        </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mmE-5s-hkv">
-                                            <rect key="frame" x="0.0" y="70" width="540" height="30"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
-                                        </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yB-OA-N5a">
-                                            <rect key="frame" x="0.0" y="120" width="540" height="50"/>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="FHK-pc-1wA"/>
-                                            </constraints>
-                                            <state key="normal" title="Log In"/>
-                                            <connections>
-                                                <action selector="actionLogin:" destination="-1" eventType="touchUpInside" id="Nyk-eb-7xl"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <animations/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="sSo-Of-IY5" secondAttribute="trailing" id="08x-Wf-cGG"/>
-                                        <constraint firstAttribute="height" constant="200" id="4vg-nG-fWm"/>
-                                        <constraint firstItem="mmE-5s-hkv" firstAttribute="leading" secondItem="5Xg-6x-P3B" secondAttribute="leading" id="L0m-nM-tW2"/>
-                                        <constraint firstAttribute="trailing" secondItem="mmE-5s-hkv" secondAttribute="trailing" id="LBy-M1-wRw"/>
-                                        <constraint firstAttribute="trailing" secondItem="8yB-OA-N5a" secondAttribute="trailing" id="Qts-CG-gZO"/>
-                                        <constraint firstItem="sSo-Of-IY5" firstAttribute="leading" secondItem="5Xg-6x-P3B" secondAttribute="leading" id="WqK-8R-NWz"/>
-                                        <constraint firstItem="8yB-OA-N5a" firstAttribute="top" secondItem="mmE-5s-hkv" secondAttribute="bottom" constant="20" id="XTf-y5-Ujg"/>
-                                        <constraint firstItem="8yB-OA-N5a" firstAttribute="leading" secondItem="5Xg-6x-P3B" secondAttribute="leading" id="Ypr-4p-POo"/>
-                                        <constraint firstItem="sSo-Of-IY5" firstAttribute="top" secondItem="5Xg-6x-P3B" secondAttribute="top" constant="20" id="m2S-oI-9LJ"/>
-                                        <constraint firstItem="mmE-5s-hkv" firstAttribute="top" secondItem="sSo-Of-IY5" secondAttribute="bottom" constant="20" id="wjp-VB-KVi"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
-                            <animations/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="5Xg-6x-P3B" firstAttribute="centerY" secondItem="dex-6k-nkN" secondAttribute="centerY" multiplier="0.8" id="20z-im-pL1"/>
-                                <constraint firstAttribute="trailing" secondItem="5Xg-6x-P3B" secondAttribute="trailing" constant="30" id="kQx-6y-S9f"/>
-                                <constraint firstItem="5Xg-6x-P3B" firstAttribute="leading" secondItem="dex-6k-nkN" secondAttribute="leading" constant="30" id="szz-V9-Xcb"/>
-                                <constraint firstAttribute="height" constant="200" id="xG5-Zl-h7g"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="xG5-Zl-h7g"/>
-                                </mask>
-                            </variation>
-                        </view>
-                    </subviews>
-                    <animations/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="dex-6k-nkN" firstAttribute="leading" secondItem="rTD-HI-Ife" secondAttribute="leading" id="RrN-e3-DGG"/>
-                        <constraint firstAttribute="trailing" secondItem="dex-6k-nkN" secondAttribute="trailing" id="Td3-I8-6bK"/>
-                        <constraint firstItem="dex-6k-nkN" firstAttribute="centerY" secondItem="rTD-HI-Ife" secondAttribute="centerY" id="emA-pE-5rF"/>
-                        <constraint firstItem="dex-6k-nkN" firstAttribute="centerX" secondItem="rTD-HI-Ife" secondAttribute="centerX" id="oDp-wx-rwv"/>
-                        <constraint firstItem="dex-6k-nkN" firstAttribute="top" secondItem="rTD-HI-Ife" secondAttribute="top" constant="5" id="qE4-7o-3lZ"/>
-                        <constraint firstItem="dex-6k-nkN" firstAttribute="centerY" secondItem="rTD-HI-Ife" secondAttribute="centerY" id="qpd-Rp-7UK"/>
-                        <constraint firstAttribute="bottom" secondItem="dex-6k-nkN" secondAttribute="bottom" id="u1Q-ZA-fng"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="emA-pE-5rF"/>
-                        </mask>
-                    </variation>
-                </scrollView>
-            </subviews>
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="rTD-HI-Ife" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5oD-hA-KnE"/>
-                <constraint firstItem="rTD-HI-Ife" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="atB-Sf-eeC"/>
-                <constraint firstItem="rTD-HI-Ife" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bx4-Y1-Ste"/>
-                <constraint firstAttribute="trailing" secondItem="rTD-HI-Ife" secondAttribute="trailing" id="kbW-hU-XgK"/>
-                <constraint firstItem="rTD-HI-Ife" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="lxP-mJ-bJ9"/>
-            </constraints>
         </view>
     </objects>
 </document>

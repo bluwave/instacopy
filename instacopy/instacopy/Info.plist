@@ -36,5 +36,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>InstagramAppClientId</key>
+	<string>c4cecab06e504596ab79813849218280</string>
+	<key>InstagramAppRedirectURL</key>
+	<string>https://localhost:3003/oauth_success</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
