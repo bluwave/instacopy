@@ -10,22 +10,6 @@ import UIKit
 
 public typealias LayoutConstraints = [NSLayoutConstraint]?
 
-func +<T>(lhs: Array<T>?, rhs: Array<T>?) -> Array<T>? {
-    switch (lhs, rhs) {
-        
-    case (nil, nil):
-        return nil
-        
-    case (nil, _ ):
-        return rhs
-        
-    case (_, nil):
-        return lhs
-        
-    default:
-        return lhs! + rhs!
-    }
-}
 
 extension UIView {
 
@@ -52,7 +36,11 @@ extension UIView {
     public func pinToAllSidesOfSuperView() -> LayoutConstraints {
         let horizontalConstraints = pinToLeftAndRightOfSuperView()
         let verticalConstraints = pinToTopAndBottomOfSuperView()
-        return horizontalConstraints  + verticalConstraints
+
+        let combinedArrays: [NSLayoutConstraint] = (horizontalConstraints ?? []) + (verticalConstraints ?? [])
+        let optionalCombinedArrays: LayoutConstraints = combinedArrays.isEmpty ? nil : combinedArrays
+
+        return optionalCombinedArrays
     }
 
 }
