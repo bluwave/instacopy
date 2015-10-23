@@ -12,13 +12,21 @@
 		27276A4D1BD74F7C005F938A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27276A4C1BD74F7C005F938A /* Assets.xcassets */; };
 		27276A501BD74F7C005F938A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27276A4E1BD74F7C005F938A /* LaunchScreen.storyboard */; };
 		27276A5B1BD74F7C005F938A /* instacopyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A5A1BD74F7C005F938A /* instacopyTests.swift */; };
-		27276A671BD7552D005F938A /* CPYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A651BD7552D005F938A /* CPYLoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		27276A681BD7552D005F938A /* CPYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27276A661BD7552D005F938A /* CPYLoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		27276A6C1BD77614005F938A /* CPYLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A6B1BD77614005F938A /* CPYLoginInteractor.swift */; settings = {ASSET_TAGS = (); }; };
-		27276A6F1BD777E6005F938A /* CPYLoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A6E1BD777E6005F938A /* CPYLoginInteractorTests.swift */; settings = {ASSET_TAGS = (); }; };
-		27276A701BD779FA005F938A /* CPYLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A6B1BD77614005F938A /* CPYLoginInteractor.swift */; settings = {ASSET_TAGS = (); }; };
-		27276A731BD77AC6005F938A /* CPYInstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A721BD77AC6005F938A /* CPYInstagramManager.swift */; settings = {ASSET_TAGS = (); }; };
-		27276A791BD7F9E8005F938A /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A781BD7F9E8005F938A /* UIView+AutoLayout.swift */; settings = {ASSET_TAGS = (); }; };
+		27276A671BD7552D005F938A /* CPYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A651BD7552D005F938A /* CPYLoginViewController.swift */; };
+		27276A681BD7552D005F938A /* CPYLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27276A661BD7552D005F938A /* CPYLoginViewController.xib */; };
+		27276A6C1BD77614005F938A /* CPYLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A6B1BD77614005F938A /* CPYLoginInteractor.swift */; };
+		27276A6F1BD777E6005F938A /* CPYLoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A6E1BD777E6005F938A /* CPYLoginInteractorTests.swift */; };
+		27276A701BD779FA005F938A /* CPYLoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A6B1BD77614005F938A /* CPYLoginInteractor.swift */; };
+		27276A731BD77AC6005F938A /* CPYInstagramManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A721BD77AC6005F938A /* CPYInstagramManager.swift */; };
+		27276A791BD7F9E8005F938A /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27276A781BD7F9E8005F938A /* UIView+AutoLayout.swift */; };
+		2784ADB41BD85673000C4CF2 /* CPYFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADB31BD85673000C4CF2 /* CPYFeedViewController.swift */; };
+		2784ADB61BD85687000C4CF2 /* CPYFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2784ADB51BD85687000C4CF2 /* CPYFeedViewController.xib */; };
+		2784ADB81BD8572B000C4CF2 /* CPYFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADB71BD8572B000C4CF2 /* CPYFeedInteractor.swift */; };
+		2784ADBB1BD85760000C4CF2 /* CPYViperMeshConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADBA1BD85760000C4CF2 /* CPYViperMeshConfigurator.swift */; };
+		2784ADBD1BD9BB49000C4CF2 /* CPYBaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADBC1BD9BB49000C4CF2 /* CPYBaseInteractor.swift */; };
+		2784ADC01BD9BCFF000C4CF2 /* CPYFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADBF1BD9BCFF000C4CF2 /* CPYFeedPresenter.swift */; };
+		2784ADC31BD9BD16000C4CF2 /* CPYFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADC21BD9BD16000C4CF2 /* CPYFeedRouter.swift */; };
+		2784ADC51BD9BE3E000C4CF2 /* CPYBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADC41BD9BE3E000C4CF2 /* CPYBasePresenter.swift */; };
 		58BF38280C8D4EAF08B57F07 /* libPods-instacopy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EE7BD119A7D2233D42144A /* libPods-instacopy.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +57,14 @@
 		27276A721BD77AC6005F938A /* CPYInstagramManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYInstagramManager.swift; sourceTree = "<group>"; };
 		27276A741BD77BA7005F938A /* instacopy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "instacopy-Bridging-Header.h"; sourceTree = "<group>"; };
 		27276A781BD7F9E8005F938A /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		2784ADB31BD85673000C4CF2 /* CPYFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYFeedViewController.swift; sourceTree = "<group>"; };
+		2784ADB51BD85687000C4CF2 /* CPYFeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPYFeedViewController.xib; sourceTree = "<group>"; };
+		2784ADB71BD8572B000C4CF2 /* CPYFeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYFeedInteractor.swift; sourceTree = "<group>"; };
+		2784ADBA1BD85760000C4CF2 /* CPYViperMeshConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYViperMeshConfigurator.swift; sourceTree = "<group>"; };
+		2784ADBC1BD9BB49000C4CF2 /* CPYBaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYBaseInteractor.swift; sourceTree = "<group>"; };
+		2784ADBF1BD9BCFF000C4CF2 /* CPYFeedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYFeedPresenter.swift; sourceTree = "<group>"; };
+		2784ADC21BD9BD16000C4CF2 /* CPYFeedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYFeedRouter.swift; sourceTree = "<group>"; };
+		2784ADC41BD9BE3E000C4CF2 /* CPYBasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPYBasePresenter.swift; sourceTree = "<group>"; };
 		37EE7BD119A7D2233D42144A /* libPods-instacopy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instacopy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9C8547F3E9D3780B48ECCD /* Pods-instacopy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instacopy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-instacopy/Pods-instacopy.release.xcconfig"; sourceTree = "<group>"; };
 		B869B38E562C41CEC27BBD43 /* Pods-instacopy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instacopy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-instacopy/Pods-instacopy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +122,10 @@
 		27276A441BD74F7C005F938A /* instacopy */ = {
 			isa = PBXGroup;
 			children = (
+				2784ADC11BD9BD07000C4CF2 /* routers */,
+				2784ADBE1BD9BCEF000C4CF2 /* presenters */,
+				2784ADB91BD85749000C4CF2 /* VIPER support */,
+				A1D5265F7A4510587CE11286 /* viewControllers */,
 				27276A751BD7F82D005F938A /* extensions */,
 				27276A711BD77AA6005F938A /* instagram support */,
 				27276A6A1BD775FC005F938A /* interactors */,
@@ -115,7 +135,6 @@
 				27276A4C1BD74F7C005F938A /* Assets.xcassets */,
 				27276A4E1BD74F7C005F938A /* LaunchScreen.storyboard */,
 				27276A511BD74F7C005F938A /* Info.plist */,
-				A1D5265F7A4510587CE11286 /* viewControllers */,
 				27276A741BD77BA7005F938A /* instacopy-Bridging-Header.h */,
 			);
 			path = instacopy;
@@ -135,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				27276A661BD7552D005F938A /* CPYLoginViewController.xib */,
+				2784ADB51BD85687000C4CF2 /* CPYFeedViewController.xib */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -143,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				27276A6B1BD77614005F938A /* CPYLoginInteractor.swift */,
+				2784ADB71BD8572B000C4CF2 /* CPYFeedInteractor.swift */,
+				2784ADBC1BD9BB49000C4CF2 /* CPYBaseInteractor.swift */,
 			);
 			name = interactors;
 			sourceTree = "<group>";
@@ -171,10 +193,36 @@
 			name = extensions;
 			sourceTree = "<group>";
 		};
+		2784ADB91BD85749000C4CF2 /* VIPER support */ = {
+			isa = PBXGroup;
+			children = (
+				2784ADBA1BD85760000C4CF2 /* CPYViperMeshConfigurator.swift */,
+			);
+			name = "VIPER support";
+			sourceTree = "<group>";
+		};
+		2784ADBE1BD9BCEF000C4CF2 /* presenters */ = {
+			isa = PBXGroup;
+			children = (
+				2784ADBF1BD9BCFF000C4CF2 /* CPYFeedPresenter.swift */,
+				2784ADC41BD9BE3E000C4CF2 /* CPYBasePresenter.swift */,
+			);
+			name = presenters;
+			sourceTree = "<group>";
+		};
+		2784ADC11BD9BD07000C4CF2 /* routers */ = {
+			isa = PBXGroup;
+			children = (
+				2784ADC21BD9BD16000C4CF2 /* CPYFeedRouter.swift */,
+			);
+			name = routers;
+			sourceTree = "<group>";
+		};
 		A1D5265F7A4510587CE11286 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				27276A651BD7552D005F938A /* CPYLoginViewController.swift */,
+				2784ADB31BD85673000C4CF2 /* CPYFeedViewController.swift */,
 			);
 			name = viewControllers;
 			sourceTree = "<group>";
@@ -272,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27276A501BD74F7C005F938A /* LaunchScreen.storyboard in Resources */,
+				2784ADB61BD85687000C4CF2 /* CPYFeedViewController.xib in Resources */,
 				27276A4D1BD74F7C005F938A /* Assets.xcassets in Resources */,
 				27276A681BD7552D005F938A /* CPYLoginViewController.xib in Resources */,
 			);
@@ -339,12 +388,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2784ADC51BD9BE3E000C4CF2 /* CPYBasePresenter.swift in Sources */,
 				27276A791BD7F9E8005F938A /* UIView+AutoLayout.swift in Sources */,
 				27276A481BD74F7C005F938A /* ViewController.swift in Sources */,
+				2784ADBB1BD85760000C4CF2 /* CPYViperMeshConfigurator.swift in Sources */,
+				2784ADC31BD9BD16000C4CF2 /* CPYFeedRouter.swift in Sources */,
 				27276A461BD74F7C005F938A /* AppDelegate.swift in Sources */,
+				2784ADC01BD9BCFF000C4CF2 /* CPYFeedPresenter.swift in Sources */,
+				2784ADBD1BD9BB49000C4CF2 /* CPYBaseInteractor.swift in Sources */,
 				27276A671BD7552D005F938A /* CPYLoginViewController.swift in Sources */,
 				27276A731BD77AC6005F938A /* CPYInstagramManager.swift in Sources */,
+				2784ADB81BD8572B000C4CF2 /* CPYFeedInteractor.swift in Sources */,
 				27276A6C1BD77614005F938A /* CPYLoginInteractor.swift in Sources */,
+				2784ADB41BD85673000C4CF2 /* CPYFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

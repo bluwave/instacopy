@@ -12,14 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let dataManager = CPYInstagramManager()
+    var meshConfigurator: CPYVIPERMeshConfigurator?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let rootViewController = CPYLoginViewController(nibName: "CPYLoginViewController", bundle: nil)
-        let navController = UINavigationController(rootViewController: rootViewController)
-        window!.rootViewController = navController
-        window!.makeKeyAndVisible()
+        configureWindow()
+        configureViperMesh()
         return true;
     }
 
@@ -43,6 +42,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+    func configureWindow() {
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let rootViewController = CPYFeedViewController(nibName: "CPYFeedViewController", bundle: nil)
+        let navController = UINavigationController(rootViewController: rootViewController)
+        window!.rootViewController = navController
+        window!.makeKeyAndVisible()
+    }
+
+    func configureViperMesh() {
+        guard
+            let window = window,
+            let navController = window.rootViewController as? UINavigationController,
+            let rootViewController = navController.viewControllers.first
+        else {
+            return
+        }
+
+        meshConfigurator = CPYVIPERMeshConfigurator(dataManager: dataManager, rootViewController: rootViewController)
     }
 }
 
