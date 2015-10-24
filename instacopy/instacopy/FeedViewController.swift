@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SDWebImage
 
-class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FeedViewInterface {
 
     var eventHandler: FeedModule?
     var posts = [FeedPostModel]()
@@ -32,7 +33,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //  MARK: - Configuration
 
     func configureTableView() {
-        tableView.registerClass(FeedTableViewCell.classForCoder, "cell")
+        tableView.registerNib(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
 
     //  MARK: - View Interface
@@ -50,7 +51,11 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell",indexpath) as FeedTableViewCell
-//        cell.imageView = posts[indexPath.row].standardResolutionImageURL
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! FeedTableViewCell
+        print(posts[indexPath.row])
+        let url = posts[indexPath.row].standardResolutionImageURL
+        cell.postImageView.sd_setImageWithURL(url)
+
+        return cell
     }
 }

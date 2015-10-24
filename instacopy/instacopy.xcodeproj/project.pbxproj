@@ -33,7 +33,7 @@
 		2784ADD01BDC27ED000C4CF2 /* FeedPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADCF1BDC27ED000C4CF2 /* FeedPostModel.swift */; };
 		2784ADD21BDC2E56000C4CF2 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2784ADD11BDC2E56000C4CF2 /* FeedTableViewCell.xib */; };
 		2784ADD51BDC2EA3000C4CF2 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADD41BDC2EA3000C4CF2 /* FeedTableViewCell.swift */; };
-		58BF38280C8D4EAF08B57F07 /* libPods-instacopy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EE7BD119A7D2233D42144A /* libPods-instacopy.a */; };
+		ED0F781B9CEFFF0DC61A96A2 /* Pods_instacopy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8130C7E9CCF22EF2B3F848E /* Pods_instacopy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +77,8 @@
 		2784ADCF1BDC27ED000C4CF2 /* FeedPostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPostModel.swift; sourceTree = "<group>"; };
 		2784ADD11BDC2E56000C4CF2 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
 		2784ADD41BDC2EA3000C4CF2 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		37EE7BD119A7D2233D42144A /* libPods-instacopy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instacopy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9C8547F3E9D3780B48ECCD /* Pods-instacopy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instacopy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-instacopy/Pods-instacopy.release.xcconfig"; sourceTree = "<group>"; };
+		A8130C7E9CCF22EF2B3F848E /* Pods_instacopy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instacopy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B869B38E562C41CEC27BBD43 /* Pods-instacopy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instacopy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-instacopy/Pods-instacopy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58BF38280C8D4EAF08B57F07 /* libPods-instacopy.a in Frameworks */,
+				ED0F781B9CEFFF0DC61A96A2 /* Pods_instacopy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +264,7 @@
 		CF28DF554417EFE3A18488E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				37EE7BD119A7D2233D42144A /* libPods-instacopy.a */,
+				A8130C7E9CCF22EF2B3F848E /* Pods_instacopy.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

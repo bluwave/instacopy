@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct FeedPostModel {
+struct FeedPostModel: CustomStringConvertible {
 
 //    @property (nonatomic, readonly) InstagramUser* user;
 //    
@@ -36,15 +36,20 @@ struct FeedPostModel {
 //    @property (nonatomic, readonly) CGSize standardResolutionImageFrameSize;
 //    
 //    @property (nonatomic, readonly) BOOL isVideo;
-    
-    var createdDate:NSDate
-    var caption:String
-    var standardResolutionImageURL:NSURL
-    
-    init(instagramMedia:InstagramMedia)
-    {
+
+    var createdDate = NSDate()
+    var caption = ""
+    var standardResolutionImageURL = NSURL()
+    var standardResolutionImageFrameSize = CGSizeZero
+
+    init(instagramMedia: InstagramMedia) {
         createdDate = instagramMedia.createdDate;
-        caption = instagramMedia.caption.text
+        caption = instagramMedia.caption.text ?? ""
         standardResolutionImageURL = instagramMedia.standardResolutionImageURL
+        standardResolutionImageFrameSize = instagramMedia.standardResolutionImageFrameSize
+    }
+
+    var description: String {
+        return "\(self.dynamicType) \ndate: \(createdDate) \ncaption: \(caption) \nimageURL: \(NSStringFromCGSize(standardResolutionImageFrameSize)) \(standardResolutionImageURL)"
     }
 }

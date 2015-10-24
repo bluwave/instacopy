@@ -30,7 +30,7 @@ class VIPERMeshConfigurator: NSObject {
         if let rootViewController = rootViewController as? FeedViewController {
             feedRouter.viewController = rootViewController
             rootViewController.eventHandler = feedPresenter
-
+            feedPresenter.userInterface = rootViewController
         }
 
     }

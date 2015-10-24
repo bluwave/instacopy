@@ -28,15 +28,20 @@ PODS:
   - InstagramKit/UICKeyChainStore (3.6.9):
     - AFNetworking (~> 2.0)
     - UICKeyChainStore (~> 2.0)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
   - UICKeyChainStore (2.0.7)
 
 DEPENDENCIES:
   - InstagramKit (~> 3.6)
   - InstagramKit/UICKeyChainStore
+  - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
   AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   InstagramKit: 1f937c5c4b8469fd00a31e235d5e7d3e256ffe5d
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   UICKeyChainStore: 696cd35083f7c8fb5e201d909b7e6aea6b478575
 
 COCOAPODS: 0.39.0
