@@ -1,5 +1,5 @@
 //
-//  CPYLoginViewController.swift
+//  LoginViewController.swift
 //  instacopy
 //
 //  Created by Garrett Richards on 10/20/15.
@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class CPYLoginViewController: UIViewController, UIWebViewDelegate {
+class LoginViewController: UIViewController, UIWebViewDelegate {
 
     let webView = UIWebView()
 

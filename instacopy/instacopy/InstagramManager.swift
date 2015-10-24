@@ -1,5 +1,5 @@
 //
-//  CPYLoginInteractor.swift
+//  InstagramManager.swift
 //  instacopy
 //
 //  Created by Garrett Richards on 10/21/15.
@@ -8,10 +8,16 @@
 
 import UIKit
 
-class CPYLoginInteractor: NSObject {
+class InstagramManager: NSObject {
 
+    let engine = InstagramEngine.sharedEngine()
+    
     func login(username: String, password: String, completionHandler: ((error: NSError?) -> Void)?)
     {
         
+    }
+
+    func isAuthenticated() -> Bool {
+        return engine.accessToken.characters.count > 0
     }
 }

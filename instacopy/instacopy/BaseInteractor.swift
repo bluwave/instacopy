@@ -1,5 +1,5 @@
 //
-//  CPYBaseInteractor.swift
+//  BaseInteractor.swift
 //  instacopy
 //
 //  Created by Garrett Richards on 10/22/15.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CPYBaseInteractor: NSObject {
+class BaseInteractor: NSObject {
     
-    var dataManager:CPYInstagramManager
+    var dataManager:InstagramManager
     
-    init(dataManager:CPYInstagramManager)
+    init(dataManager:InstagramManager)
     {
         self.dataManager = dataManager
     }

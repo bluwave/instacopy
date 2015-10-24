@@ -1,5 +1,5 @@
 //
-//  CPYLoginInteractorTests.swift
+//  LoginInteractorTests.swift
 //  instacopy
 //
 //  Created by Garrett Richards on 10/21/15.
@@ -8,13 +8,13 @@
 
 import XCTest
 
-class CPYLoginInteractorTests: XCTestCase {
+class LoginInteractorTests: XCTestCase {
     
-    var interactor = CPYLoginInteractor()
+    var interactor = LoginInteractor()
     
     override func setUp() {
         super.setUp()
-        interactor = CPYLoginInteractor()
+        interactor = LoginInteractor()
     }
     
     override func tearDown() {

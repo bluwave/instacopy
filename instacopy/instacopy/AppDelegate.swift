@@ -12,8 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let dataManager = CPYInstagramManager()
-    var meshConfigurator: CPYVIPERMeshConfigurator?
+    let dataManager = InstagramManager()
+    var meshConfigurator: VIPERMeshConfigurator?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func configureWindow() {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        let rootViewController = CPYFeedViewController(nibName: "CPYFeedViewController", bundle: nil)
+        let rootViewController = FeedViewController(nibName: "FeedViewController", bundle: nil)
         let navController = UINavigationController(rootViewController: rootViewController)
         window!.rootViewController = navController
         window!.makeKeyAndVisible()
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
 
-        meshConfigurator = CPYVIPERMeshConfigurator(dataManager: dataManager, rootViewController: rootViewController)
+        meshConfigurator = VIPERMeshConfigurator(dataManager: dataManager, rootViewController: rootViewController)
     }
 }
 
