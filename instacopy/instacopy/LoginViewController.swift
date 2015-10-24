@@ -9,9 +9,21 @@
 import UIKit
 import WebKit
 
-class LoginViewController: UIViewController, UIWebViewDelegate {
+class LoginViewController: UIViewController, UIWebViewDelegate, LoginViewInterface {
 
     let webView = UIWebView()
+    var eventHandler: LoginModule
+
+    internal init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?, eventHandler: LoginModule)
+    {
+        self.eventHandler = eventHandler
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,22 +44,16 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
 
     }
 
-    func dismissModal() {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-
     // MARK: - web view delegate methods
 
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
 
         do {
             try InstagramEngine.sharedEngine().receivedValidAccessTokenFromURL(request.URL)
-            dismissModal()
+            self.eventHandler.loginSucceeded()
             return false
         } catch _ {
-
         }
-
         return true
     }
 }

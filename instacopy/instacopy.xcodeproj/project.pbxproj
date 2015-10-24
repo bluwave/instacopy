@@ -29,6 +29,10 @@
 		2784ADC71BDA9E3A000C4CF2 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADC61BDA9E3A000C4CF2 /* LoginRouter.swift */; };
 		2784ADC91BDA9FA9000C4CF2 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADC81BDA9FA9000C4CF2 /* BaseRouter.swift */; };
 		2784ADCB1BDB3DDF000C4CF2 /* FeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADCA1BDB3DDF000C4CF2 /* FeedInteractor.swift */; };
+		2784ADCD1BDB46D1000C4CF2 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADCC1BDB46D1000C4CF2 /* LoginPresenter.swift */; };
+		2784ADD01BDC27ED000C4CF2 /* FeedPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADCF1BDC27ED000C4CF2 /* FeedPostModel.swift */; };
+		2784ADD21BDC2E56000C4CF2 /* FeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2784ADD11BDC2E56000C4CF2 /* FeedTableViewCell.xib */; };
+		2784ADD51BDC2EA3000C4CF2 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ADD41BDC2EA3000C4CF2 /* FeedTableViewCell.swift */; };
 		58BF38280C8D4EAF08B57F07 /* libPods-instacopy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37EE7BD119A7D2233D42144A /* libPods-instacopy.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,10 @@
 		2784ADC61BDA9E3A000C4CF2 /* LoginRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		2784ADC81BDA9FA9000C4CF2 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		2784ADCA1BDB3DDF000C4CF2 /* FeedInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedInteractor.swift; sourceTree = "<group>"; };
+		2784ADCC1BDB46D1000C4CF2 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		2784ADCF1BDC27ED000C4CF2 /* FeedPostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedPostModel.swift; sourceTree = "<group>"; };
+		2784ADD11BDC2E56000C4CF2 /* FeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedTableViewCell.xib; sourceTree = "<group>"; };
+		2784ADD41BDC2EA3000C4CF2 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		37EE7BD119A7D2233D42144A /* libPods-instacopy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instacopy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9C8547F3E9D3780B48ECCD /* Pods-instacopy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instacopy.release.xcconfig"; path = "../Pods/Target Support Files/Pods-instacopy/Pods-instacopy.release.xcconfig"; sourceTree = "<group>"; };
 		B869B38E562C41CEC27BBD43 /* Pods-instacopy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instacopy.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-instacopy/Pods-instacopy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +134,8 @@
 		27276A441BD74F7C005F938A /* instacopy */ = {
 			isa = PBXGroup;
 			children = (
+				2784ADD31BDC2E92000C4CF2 /* view */,
+				2784ADCE1BDC27D9000C4CF2 /* model */,
 				2784ADC11BD9BD07000C4CF2 /* routers */,
 				2784ADBE1BD9BCEF000C4CF2 /* presenters */,
 				2784ADB91BD85749000C4CF2 /* VIPER support */,
@@ -159,6 +169,7 @@
 			children = (
 				27276A661BD7552D005F938A /* LoginViewController.xib */,
 				2784ADB51BD85687000C4CF2 /* FeedViewController.xib */,
+				2784ADD11BDC2E56000C4CF2 /* FeedTableViewCell.xib */,
 			);
 			name = XIBs;
 			sourceTree = "<group>";
@@ -210,6 +221,7 @@
 			children = (
 				2784ADBF1BD9BCFF000C4CF2 /* FeedPresenter.swift */,
 				2784ADC41BD9BE3E000C4CF2 /* BasePresenter.swift */,
+				2784ADCC1BDB46D1000C4CF2 /* LoginPresenter.swift */,
 			);
 			name = presenters;
 			sourceTree = "<group>";
@@ -222,6 +234,22 @@
 				2784ADC81BDA9FA9000C4CF2 /* BaseRouter.swift */,
 			);
 			name = routers;
+			sourceTree = "<group>";
+		};
+		2784ADCE1BDC27D9000C4CF2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2784ADCF1BDC27ED000C4CF2 /* FeedPostModel.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		2784ADD31BDC2E92000C4CF2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2784ADD41BDC2EA3000C4CF2 /* FeedTableViewCell.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 		A1D5265F7A4510587CE11286 /* viewControllers */ = {
@@ -326,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27276A501BD74F7C005F938A /* LaunchScreen.storyboard in Resources */,
+				2784ADD21BDC2E56000C4CF2 /* FeedTableViewCell.xib in Resources */,
 				2784ADB61BD85687000C4CF2 /* FeedViewController.xib in Resources */,
 				27276A4D1BD74F7C005F938A /* Assets.xcassets in Resources */,
 				27276A681BD7552D005F938A /* LoginViewController.xib in Resources */,
@@ -394,14 +423,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2784ADCD1BDB46D1000C4CF2 /* LoginPresenter.swift in Sources */,
 				2784ADC51BD9BE3E000C4CF2 /* BasePresenter.swift in Sources */,
 				2784ADC71BDA9E3A000C4CF2 /* LoginRouter.swift in Sources */,
 				27276A791BD7F9E8005F938A /* UIView+AutoLayout.swift in Sources */,
 				27276A481BD74F7C005F938A /* ViewController.swift in Sources */,
 				2784ADBB1BD85760000C4CF2 /* ViperMeshConfigurator.swift in Sources */,
 				2784ADCB1BDB3DDF000C4CF2 /* FeedInteractor.swift in Sources */,
+				2784ADD51BDC2EA3000C4CF2 /* FeedTableViewCell.swift in Sources */,
 				2784ADC31BD9BD16000C4CF2 /* FeedRouter.swift in Sources */,
 				27276A461BD74F7C005F938A /* AppDelegate.swift in Sources */,
+				2784ADD01BDC27ED000C4CF2 /* FeedPostModel.swift in Sources */,
 				2784ADC91BDA9FA9000C4CF2 /* BaseRouter.swift in Sources */,
 				2784ADC01BD9BCFF000C4CF2 /* FeedPresenter.swift in Sources */,
 				2784ADBD1BD9BB49000C4CF2 /* BaseInteractor.swift in Sources */,

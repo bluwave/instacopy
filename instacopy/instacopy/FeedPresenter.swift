@@ -8,12 +8,17 @@
 
 import UIKit
 
-protocol FeedModule
-{
+protocol FeedModule {
     func viewWillAppear()
 }
 
+protocol FeedViewInterface {
+    func showPosts(posts: [FeedPostModel])
+}
+
 class FeedPresenter: BasePresenter, FeedInteractorOutput, FeedModule {
+
+    var userInterface: FeedViewInterface?
 
     var interactor: FeedInteractorInput {
         get {
@@ -28,10 +33,18 @@ class FeedPresenter: BasePresenter, FeedInteractorOutput, FeedModule {
     }
 
     func viewWillAppear() {
-        if(!interactor.isAuthenticated())
-        {
+        if (!interactor.isAuthenticated()) {
             router.showLogin()
+        } else {
+            self.interactor.getFeed()
         }
     }
 
+    
+    
+    func showPosts(posts: [FeedPostModel]) {
+        if let ui = userInterface {
+            ui.showPosts(posts)
+        }
+    }
 }

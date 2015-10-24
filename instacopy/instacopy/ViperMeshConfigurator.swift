@@ -20,12 +20,17 @@ class VIPERMeshConfigurator: NSObject {
         feedInteractor.output = feedPresenter
 
         // login
+        let loginInteractor = LoginInteractor(dataManager: dataManager)
         let loginRouter = LoginRouter()
-        feedRouter.loginRouter = loginRouter
+        let loginPresenter = LoginPresenter(interactor:loginInteractor, router:loginRouter)
+        loginRouter.presenter = loginPresenter
+        feedRouter.loginRouter = loginRouter    // TODO - this should be set in presenter init method
 
         // configure root view
         if let rootViewController = rootViewController as? FeedViewController {
+            feedRouter.viewController = rootViewController
             rootViewController.eventHandler = feedPresenter
+
         }
 
     }

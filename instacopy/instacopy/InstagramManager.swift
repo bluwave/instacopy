@@ -18,6 +18,31 @@ class InstagramManager: NSObject {
     }
 
     func isAuthenticated() -> Bool {
-        return engine.accessToken.characters.count > 0
+        guard
+            let accessToken = engine.accessToken
+        else { return false }
+
+        return accessToken.characters.count > 0
     }
+
+    func getFeed(completion: ([FeedPostModel]) -> Void)
+    {
+        self.engine.getSelfFeedWithCount(10, maxId: "", success: {
+            (objects: [AnyObject]!, paginationInfo: InstagramPaginationInfo!) -> Void in
+
+            var posts = [FeedPostModel]()
+            for obj in objects {
+                if let post = obj as? InstagramMedia {
+                    posts.append(FeedPostModel(instagramMedia: post))
+                }
+            }
+
+            completion(posts)
+
+        }) {
+            (error: NSError!, Int) -> Void in
+            print("error ")
+        }
+    }
+
 }

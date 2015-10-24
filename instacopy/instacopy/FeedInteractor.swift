@@ -10,9 +10,11 @@ import UIKit
 
 protocol FeedInteractorInput {
     func isAuthenticated() -> Bool
+    func getFeed()
 }
 
 protocol FeedInteractorOutput {
+    func showPosts(posts: [FeedPostModel])
 }
 
 class FeedInteractor: BaseInteractor, FeedInteractorInput {
@@ -21,6 +23,16 @@ class FeedInteractor: BaseInteractor, FeedInteractorInput {
 
     func isAuthenticated() -> Bool {
         return dataManager.isAuthenticated()
+    }
+
+    func getFeed()
+    {
+        self.dataManager.getFeed {
+            (posts: [FeedPostModel]) -> Void in
+            if let output = self.output {
+                output.showPosts(posts)
+            }
+        }
     }
 
 }

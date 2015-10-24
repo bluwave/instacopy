@@ -11,7 +11,7 @@ import UIKit
 class BaseRouter: NSObject {
 
     weak var viewController: UIViewController?
-
+    
     func presentViewController(viewController: UIViewController, presentingViewController: UIViewController, animated: Bool, embedInNavigationController: Bool, completion: (() -> Void)?) {
         var modalViewController = viewController
         if (embedInNavigationController) {

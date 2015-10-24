@@ -16,5 +16,6 @@ class BasePresenter: NSObject {
     init(interactor: AnyObject, router: AnyObject) {
         self.internalInteractor = interactor
         self.internalRouter = router
+        //  TODO - figure out how to set presenter on router here
     }
 }

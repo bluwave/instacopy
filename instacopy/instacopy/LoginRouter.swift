@@ -10,14 +10,21 @@ import UIKit
 
 class LoginRouter: BaseRouter {
 
-    func showLogin(presentingViewController: UIViewController) {
-        self.viewController = FeedViewController(nibName: "FeedViewController", bundle: nil)
-        //  TODO - configure VIPER HERE
-        if let viewController = self.viewController  {
-//            presentViewController(viewController, presentingViewController: presentingViewController, animated: true, embedInNavigationController: true, completion: nil )
-//            presentViewController(viewController, presentingViewController: presentingViewController, animated: true, embedInNavigationController:
-            presentViewController(viewController,presentingViewController:presentingViewController,animated: true, embedInNavigationController: true, completion: nil)
-        }
+    var presenter: LoginPresenter?
 
+    func showLogin(presentingViewController: UIViewController) {
+        if let presenter = self.presenter {
+            let viewController = LoginViewController(nibName: "LoginViewController", bundle: nil,eventHandler: presenter)
+            presenter.userInterface = viewController as LoginViewInterface
+            presentViewController(viewController, presentingViewController: presentingViewController, animated: true, embedInNavigationController: true, completion: nil)
+            self.viewController = viewController
+        }
+    }
+
+    func dismiss()
+    {
+        if let viewController = self.viewController {
+            viewController.dismissViewControllerAnimated(true,completion: nil)
+        }
     }
 }

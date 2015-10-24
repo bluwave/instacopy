@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginInteractor: NSObject {
+class LoginInteractor: BaseInteractor {
 
     func login(username: String, password: String, completionHandler: ((error: NSError?) -> Void)?)
     {
