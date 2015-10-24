@@ -41,12 +41,14 @@ struct FeedPostModel: CustomStringConvertible {
     var caption = ""
     var standardResolutionImageURL = NSURL()
     var standardResolutionImageFrameSize = CGSizeZero
+    var user = ""
 
     init(instagramMedia: InstagramMedia) {
         createdDate = instagramMedia.createdDate;
         caption = instagramMedia.caption.text ?? ""
         standardResolutionImageURL = instagramMedia.standardResolutionImageURL
         standardResolutionImageFrameSize = instagramMedia.standardResolutionImageFrameSize
+        user = instagramMedia.user.username
     }
 
     var description: String {

@@ -44,6 +44,9 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     //  MARK: - tableview
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return self.view.bounds.size.width + 60
+    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
@@ -52,9 +55,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! FeedTableViewCell
-        print(posts[indexPath.row])
-        let url = posts[indexPath.row].standardResolutionImageURL
-        cell.postImageView.sd_setImageWithURL(url)
+
+        cell.update(posts[indexPath.row])
 
         return cell
     }
