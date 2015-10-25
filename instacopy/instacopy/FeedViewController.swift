@@ -45,7 +45,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     //  MARK: - tableview
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return self.view.bounds.size.width + 60
+        let margin = FeedTableViewCell.marginSize() * 2
+        return self.view.bounds.size.width + margin + FeedTableViewCell.measuredHeightOfCaption(posts[indexPath.row], maxWidth: self.view.bounds.width - margin)
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

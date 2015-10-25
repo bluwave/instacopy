@@ -21,18 +21,30 @@ class FeedTableViewCell: UITableViewCell {
 
     func update(model: FeedPostModel) {
         postImageView.sd_setImageWithURL(model.standardResolutionImageURL)
-        captionLabel.attributedText = attributedLabelFromCaption(model)
+        captionLabel.attributedText = FeedTableViewCell.attributedLabelFromCaption(model)
     }
 
-    func attributedLabelFromCaption(model: FeedPostModel) -> NSAttributedString {
+    class func attributedLabelFromCaption(model: FeedPostModel) -> NSAttributedString {
         let captionFont = TypographyType.Caption.font()
         let userFont = TypographyType.User.font()
         let usernameAttribs = [NSForegroundColorAttributeName: UIColor.blueColor(), NSFontAttributeName: userFont]
         let captionAttribs = [NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: captionFont]
 
-        let caption: NSMutableAttributedString = NSMutableAttributedString(string: model.user, attributes: usernameAttribs)
-        caption.appendAttributedString(NSAttributedString(string: "" + model.caption, attributes: captionAttribs))
+        let caption: NSMutableAttributedString = NSMutableAttributedString(string: model.user + " ", attributes: usernameAttribs)
+        caption.appendAttributedString(NSAttributedString(string: " " + model.caption, attributes: captionAttribs))
 
         return caption
     }
+
+    class func measuredHeightOfCaption(model: FeedPostModel, maxWidth: CGFloat) -> CGFloat {
+        let caption = FeedTableViewCell.attributedLabelFromCaption(model)
+        let options: NSStringDrawingOptions = [.UsesLineFragmentOrigin, .UsesFontLeading]
+        let size = caption.boundingRectWithSize(CGSizeMake(maxWidth, CGFloat.max), options: options, context: nil)
+        return size.size.height
+    }
+
+    class func marginSize() -> CGFloat {
+        return 20
+    }
+
 }
