@@ -6,5 +6,5 @@
 //  Copyright © 2015 Acme. All rights reserved.
 //
 
-#import "InstagramKit.h"
-#import "InstagramEngine.h"
+//#import "InstagramKit.h"
+//#import "InstagramEngine.h"

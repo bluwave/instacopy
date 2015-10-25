@@ -10,6 +10,8 @@ import UIKit
 
 protocol FeedModule {
     func viewWillAppear()
+
+    func refresh()
 }
 
 protocol FeedViewInterface {
@@ -40,8 +42,11 @@ class FeedPresenter: BasePresenter, FeedInteractorOutput, FeedModule {
         }
     }
 
-    
-    
+    func refresh() {
+        self.interactor.getFeed()
+    }
+
+
     func showPosts(posts: [FeedPostModel]) {
         if let ui = userInterface {
             ui.showPosts(posts)

@@ -8,6 +8,8 @@
 
 import UIKit
 import WebKit
+import InstagramKit
+
 
 class LoginViewController: UIViewController, UIWebViewDelegate, LoginViewInterface {
 

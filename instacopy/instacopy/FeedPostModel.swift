@@ -6,8 +6,8 @@
 //  Copyright © 2015 Acme. All rights reserved.
 //
 
-import Foundation
-
+import UIKit
+import InstagramKit
 
 struct FeedPostModel: CustomStringConvertible {
 

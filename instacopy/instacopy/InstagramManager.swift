@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import InstagramKit
+
 
 class InstagramManager: NSObject {
 
