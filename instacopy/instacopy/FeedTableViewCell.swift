@@ -40,10 +40,7 @@ class FeedTableViewCell: UITableViewCell {
         let caption = FeedTableViewCell.attributedLabelFromCaption(model)
         let options: NSStringDrawingOptions = [.UsesLineFragmentOrigin, .UsesFontLeading]
         let size = caption.boundingRectWithSize(CGSizeMake(maxWidth, CGFloat.max), options: options, context: nil)
-
-return size.size.height
-
-
+        return size.size.height
     }
 
     class func marginSize() -> CGFloat {

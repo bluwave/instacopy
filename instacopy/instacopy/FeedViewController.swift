@@ -29,7 +29,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let eventHandler = eventHandler {
             eventHandler.viewWillAppear()
         }
-
     }
 
     //  MARK: - Configuration
@@ -42,7 +41,6 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.addSubview(refreshControl)
         self.refreshControl = refreshControl
     }
-
 
     //  MARK: - Actions
     func actionRefresh(sender: AnyObject?) {
@@ -66,17 +64,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     //  MARK: - tableview
+
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let margin = FeedTableViewCell.marginSize() * 2
-//        let h = self.view.bounds.size.width + margin + FeedTableViewCell.measuredHeightOfCaption(posts[indexPath.row], maxWidth: self.view.bounds.width - margin)
-//        print("h: \(h) \(posts[indexPath.row].caption))))")
         return self.view.bounds.size.width + margin + FeedTableViewCell.measuredHeightOfCaption(posts[indexPath.row], maxWidth: self.view.bounds.width - margin)
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
     }
-
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! FeedTableViewCell
