@@ -25,7 +25,7 @@ enum TypographyType {
 
     func fontSizeForType(type: TypographyType) -> CGFloat {
         switch self {
-        case Body:
+        case .Body:
             return 16.0
         case .Bold:
             return 16.0
@@ -38,7 +38,7 @@ enum TypographyType {
 
     func fontNameForType(type: TypographyType) -> String {
         switch self {
-        case Body:
+        case .Body:
             return "OpenSans"
         case .Bold:
             return "OpenSans-Semibold"
