@@ -35,7 +35,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func configureRefreshControl() {
         let refreshControl = UIRefreshControl()
-        refreshControl.backgroundColor = UIColor.purpleColor()
+        refreshControl.backgroundColor = UIColor(white: 0.9, alpha: 0.9)
         refreshControl.tintColor = UIColor.blackColor()
         refreshControl.addTarget(self, action: Selector("actionRefresh:"), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refreshControl)
