@@ -13,16 +13,25 @@ public typealias LayoutConstraints = [NSLayoutConstraint]?
 
 extension UIView {
 
-    public func addConstraintsWithVFL(VFL: String, metrics: [String:AnyObject]?) -> LayoutConstraints {
+    public func addConstraintsWithVFL(VFL: String, connectingViews: [String:UIView]?, metrics: [String:AnyObject]?) -> LayoutConstraints {
         if let superview = superview {
             translatesAutoresizingMaskIntoConstraints = false
-            let views = ["view": self, "superview": superview]
+            var views = ["view": self, "superview": superview]
+            if let connectingViews = connectingViews {
+                for (key, value) in connectingViews {
+                    views[key] = value
+                }
+            }
             let constraints = NSLayoutConstraint.constraintsWithVisualFormat(VFL, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
             superview.addConstraints(constraints)
             return constraints
         } else {
             return nil
         }
+    }
+
+    public func addConstraintsWithVFL(VFL: String, metrics: [String:AnyObject]?) -> LayoutConstraints {
+        return addConstraintsWithVFL(VFL, connectingViews: nil, metrics: metrics)
     }
 
     public func pinToLeftAndRightOfSuperView() -> LayoutConstraints {
@@ -43,4 +52,8 @@ extension UIView {
         return optionalCombinedArrays
     }
 
+    public func debug_border(color: UIColor = UIColor.redColor()) {
+        self.layer.borderColor = color.CGColor
+        self.layer.borderWidth = 1.0
+    }
 }

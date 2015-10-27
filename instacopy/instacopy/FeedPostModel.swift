@@ -9,6 +9,22 @@
 import UIKit
 import InstagramKit
 
+struct PostCommentModel: CustomStringConvertible {
+
+    var createdDate = NSDate()
+    var user = ""
+    var text = ""
+    init(comment: InstagramComment) {
+        createdDate = comment.createdDate
+        user = comment.user.username
+        text = comment.text
+    }
+
+    var description: String {
+        return "\(self.dynamicType) \(user): text: \(text)"
+    }
+}
+
 struct FeedPostModel: CustomStringConvertible {
 
 //    @property (nonatomic, readonly) InstagramUser* user;
@@ -42,6 +58,7 @@ struct FeedPostModel: CustomStringConvertible {
     var standardResolutionImageURL = NSURL()
     var standardResolutionImageFrameSize = CGSizeZero
     var user = ""
+    var comments = [PostCommentModel]()
 
     init(instagramMedia: InstagramMedia) {
         createdDate = instagramMedia.createdDate;
@@ -49,6 +66,7 @@ struct FeedPostModel: CustomStringConvertible {
         standardResolutionImageURL = instagramMedia.standardResolutionImageURL
         standardResolutionImageFrameSize = instagramMedia.standardResolutionImageFrameSize
         user = instagramMedia.user.username
+        comments = instagramMedia.comments.map{ PostCommentModel(comment:$0 as! InstagramComment)  }
     }
 
     var description: String {

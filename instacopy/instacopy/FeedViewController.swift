@@ -66,8 +66,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //  MARK: - tableview
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let margin = FeedTableViewCell.marginSize() * 2
-        return self.view.bounds.size.width + margin + FeedTableViewCell.measuredHeightOfCaption(posts[indexPath.row], maxWidth: self.view.bounds.width - margin)
+        return FeedTableViewCell.measuredHeightOfCell(posts[indexPath.row], imageHeight: self.view.bounds.size.width, maxWidth: maxCellWidth())
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,8 +76,15 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! FeedTableViewCell
 
-        cell.update(posts[indexPath.row])
+        let model = posts[indexPath.row]
+        cell.update(model, maxWidth: maxCellWidth())
 
         return cell
+    }
+    
+    //  MARK: - Helpers
+    func maxCellWidth() -> CGFloat {
+        let margin = FeedTableViewCell.marginSize() * 2
+        return self.view.bounds.width - margin
     }
 }
