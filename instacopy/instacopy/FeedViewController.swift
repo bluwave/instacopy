@@ -41,6 +41,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.addSubview(refreshControl)
         self.refreshControl = refreshControl
     }
+    
+    func configureTitleView() {
+        let imageView = UIImageView(image: UIImage(named: "icon"))
+        imageView.frame = 
+        rootViewController.navigationItem.titleView = imageView
+    }
 
     //  MARK: - Actions
     func actionRefresh(sender: AnyObject?) {

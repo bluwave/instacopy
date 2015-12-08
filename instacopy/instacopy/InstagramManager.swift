@@ -44,6 +44,7 @@ class InstagramManager: NSObject {
         }) {
             (error: NSError!, Int) -> Void in
             print("error ")
+            //  TODO - handle error, this is unhandled
         }
     }
 
