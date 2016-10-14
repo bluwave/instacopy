@@ -9,10 +9,10 @@
 import UIKit
 
 enum TypographyType {
-    case Body
-    case Bold
-    case Caption
-    case User
+    case body
+    case bold
+    case caption
+    case user
 
     func font() -> UIFont {
         switch self {
@@ -23,28 +23,28 @@ enum TypographyType {
         }
     }
 
-    func fontSizeForType(type: TypographyType) -> CGFloat {
+    func fontSizeForType(_ type: TypographyType) -> CGFloat {
         switch self {
-        case .Body:
+        case .body:
             return 16.0
-        case .Bold:
+        case .bold:
             return 16.0
-        case .Caption:
+        case .caption:
             return 13.0
-        case .User:
+        case .user:
             return 13.0
         }
     }
 
-    func fontNameForType(type: TypographyType) -> String {
+    func fontNameForType(_ type: TypographyType) -> String {
         switch self {
-        case .Body:
+        case .body:
             return "OpenSans"
-        case .Bold:
+        case .bold:
             return "OpenSans-Semibold"
-        case .Caption:
+        case .caption:
             return "OpenSans-Light"
-        case .User:
+        case .user:
             return "OpenSans-Semibold"
         }
     }

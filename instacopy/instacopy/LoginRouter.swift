@@ -12,7 +12,7 @@ class LoginRouter: BaseRouter {
 
     var presenter: LoginPresenter?
 
-    func showLogin(presentingViewController: UIViewController) {
+    func showLogin(_ presentingViewController: UIViewController) {
         if let presenter = self.presenter {
             let viewController = LoginViewController(nibName: "LoginViewController", bundle: nil,eventHandler: presenter)
             presenter.userInterface = viewController as LoginViewInterface
@@ -24,7 +24,7 @@ class LoginRouter: BaseRouter {
     func dismiss()
     {
         if let viewController = self.viewController {
-            viewController.dismissViewControllerAnimated(true,completion: nil)
+            viewController.dismiss(animated: true,completion: nil)
         }
     }
 }

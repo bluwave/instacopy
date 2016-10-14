@@ -11,7 +11,7 @@ import InstagramKit
 
 struct PostCommentModel: CustomStringConvertible {
 
-    var createdDate = NSDate()
+    var createdDate = Date()
     var user = ""
     var text = ""
     init(comment: InstagramComment) {
@@ -21,7 +21,7 @@ struct PostCommentModel: CustomStringConvertible {
     }
 
     var description: String {
-        return "\(self.dynamicType) \(user): text: \(text)"
+        return "\(type(of: self)) \(user): text: \(text)"
     }
 }
 
@@ -32,7 +32,7 @@ struct FeedPostModel: CustomStringConvertible {
 //    @property (nonatomic, readonly) NSDate *createdDate;
 //
 //    @property (nonatomic, readonly) NSString* link;
-//    
+//
 //    @property (nonatomic, readonly) InstagramComment* caption;
 //
 //    @property (nonatomic, readonly) NSInteger likesCount;
@@ -53,23 +53,24 @@ struct FeedPostModel: CustomStringConvertible {
 //    
 //    @property (nonatomic, readonly) BOOL isVideo;
 
-    var createdDate = NSDate()
+    var createdDate = Date()
     var caption = ""
-    var standardResolutionImageURL = NSURL()
-    var standardResolutionImageFrameSize = CGSizeZero
+    var standardResolutionImageURL = URL(string: "")!
+    var standardResolutionImageFrameSize = CGSize.zero
     var user = ""
     var comments = [PostCommentModel]()
 
     init(instagramMedia: InstagramMedia) {
         createdDate = instagramMedia.createdDate;
-        caption = instagramMedia.caption.text ?? ""
+        caption = instagramMedia.caption?.text ?? ""
         standardResolutionImageURL = instagramMedia.standardResolutionImageURL
         standardResolutionImageFrameSize = instagramMedia.standardResolutionImageFrameSize
         user = instagramMedia.user.username
-        comments = instagramMedia.comments.map{ PostCommentModel(comment:$0 as! InstagramComment)  }
+        //  FIXME: - fix comments
+        //        comments = instagramMedia.comments.map{ PostCommentModel(comment:$0 as! InstagramComment)  }
     }
 
     var description: String {
-        return "\(self.dynamicType) \ndate: \(createdDate) \ncaption: \(caption) \nimageURL: \(NSStringFromCGSize(standardResolutionImageFrameSize)) \(standardResolutionImageURL)"
+        return "\(type(of: self)) \ndate: \(createdDate) \ncaption: \(caption) \nimageURL: \(NSStringFromCGSize(standardResolutionImageFrameSize)) \(standardResolutionImageURL)"
     }
 }

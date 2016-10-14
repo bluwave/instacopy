@@ -15,7 +15,7 @@ protocol FeedModule {
 }
 
 protocol FeedViewInterface {
-    func showPosts(posts: [FeedPostModel])
+    func showPosts(_ posts: [FeedPostModel])
 }
 
 class FeedPresenter: BasePresenter, FeedInteractorOutput, FeedModule {
@@ -47,7 +47,7 @@ class FeedPresenter: BasePresenter, FeedInteractorOutput, FeedModule {
     }
 
 
-    func showPosts(posts: [FeedPostModel]) {
+    func showPosts(_ posts: [FeedPostModel]) {
         if let ui = userInterface {
             ui.showPosts(posts)
         }

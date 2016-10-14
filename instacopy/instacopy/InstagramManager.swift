@@ -12,9 +12,9 @@ import InstagramKit
 
 class InstagramManager: NSObject {
 
-    let engine = InstagramEngine.sharedEngine()
+    let engine = InstagramEngine.shared()
     
-    func login(username: String, password: String, completionHandler: ((error: NSError?) -> Void)?)
+    func login(_ username: String, password: String, completionHandler: ((_ error: NSError?) -> Void)?)
     {
         
     }
@@ -27,22 +27,16 @@ class InstagramManager: NSObject {
         return accessToken.characters.count > 0
     }
 
-    func getFeed(completion: ([FeedPostModel]) -> Void)
-    {
-        self.engine.getSelfFeedWithCount(10, maxId: "", success: {
-            (objects: [AnyObject]!, paginationInfo: InstagramPaginationInfo!) -> Void in
-
+    func getFeed(_ completion: @escaping ([FeedPostModel]) -> Void) {
+        self.engine.getSelfFeed(withCount: 10, maxId: "", success: { (mediaPosts, paginationInfo) in
             var posts = [FeedPostModel]()
-            for obj in objects {
-                if let post = obj as? InstagramMedia {
+            for post in mediaPosts {
                     posts.append(FeedPostModel(instagramMedia: post))
-                }
             }
 
             completion(posts)
 
-        }) {
-            (error: NSError!, Int) -> Void in
+        }) { (error, statusCode) in
             print("error ")
         }
     }

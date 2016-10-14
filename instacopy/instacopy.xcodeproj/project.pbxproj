@@ -325,12 +325,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27276A5F1BD74F7C005F938A /* Build configuration list for PBXNativeTarget "instacopy" */;
 			buildPhases = (
-				503D75CD044204F7EE7C92DC /* Check Pods Manifest.lock */,
+				503D75CD044204F7EE7C92DC /* [CP] Check Pods Manifest.lock */,
 				27276A3E1BD74F7C005F938A /* Sources */,
 				27276A3F1BD74F7C005F938A /* Frameworks */,
 				27276A401BD74F7C005F938A /* Resources */,
-				27C0571901BB87B262D7A612 /* Embed Pods Frameworks */,
-				4FE37E9F6161A32EFC613EFB /* Copy Pods Resources */,
+				27C0571901BB87B262D7A612 /* [CP] Embed Pods Frameworks */,
+				4FE37E9F6161A32EFC613EFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,14 +366,16 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = "";
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Acme;
 				TargetAttributes = {
 					27276A411BD74F7C005F938A = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 					};
 					27276A551BD74F7C005F938A = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 27276A411BD74F7C005F938A;
 					};
 				};
@@ -430,14 +432,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		27C0571901BB87B262D7A612 /* Embed Pods Frameworks */ = {
+		27C0571901BB87B262D7A612 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,14 +447,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-instacopy/Pods-instacopy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4FE37E9F6161A32EFC613EFB /* Copy Pods Resources */ = {
+		4FE37E9F6161A32EFC613EFB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,14 +462,14 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-instacopy/Pods-instacopy-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		503D75CD044204F7EE7C92DC /* Check Pods Manifest.lock */ = {
+		503D75CD044204F7EE7C92DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,8 +551,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -593,8 +597,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -613,6 +619,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -627,6 +634,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.acme.instacopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "instacopy/instacopy-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -640,6 +648,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.acme.instacopy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "instacopy/instacopy-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -651,6 +660,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acme.instacopyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/instacopy.app/instacopy";
 			};
 			name = Debug;
@@ -663,6 +673,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acme.instacopyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/instacopy.app/instacopy";
 			};
 			name = Release;

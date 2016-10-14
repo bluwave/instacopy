@@ -23,7 +23,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         configureRefreshControl()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         if let eventHandler = eventHandler {
@@ -36,26 +36,26 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func configureRefreshControl() {
         let refreshControl = UIRefreshControl()
         refreshControl.backgroundColor = UIColor(white: 0.9, alpha: 0.9)
-        refreshControl.tintColor = UIColor.blackColor()
-        refreshControl.addTarget(self, action: Selector("actionRefresh:"), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.tintColor = UIColor.black
+        refreshControl.addTarget(self, action: #selector(FeedViewController.actionRefresh(_:)), for: UIControlEvents.valueChanged)
         self.tableView.addSubview(refreshControl)
         self.refreshControl = refreshControl
     }
 
     //  MARK: - Actions
-    func actionRefresh(sender: AnyObject?) {
+    func actionRefresh(_ sender: AnyObject?) {
         if let eventHandler = self.eventHandler {
             eventHandler.refresh()
         }
     }
 
     func configureTableView() {
-        tableView.registerNib(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
 
     //  MARK: - View Interface
 
-    func showPosts(posts: [FeedPostModel]) {
+    func showPosts(_ posts: [FeedPostModel]) {
         self.posts = posts
         tableView.reloadData()
         if let refreshControl = self.refreshControl {
@@ -65,18 +65,18 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     //  MARK: - tableview
 
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return FeedTableViewCell.measuredHeightOfCell(posts[indexPath.row], imageHeight: self.view.bounds.size.width, maxWidth: maxCellWidth())
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return FeedTableViewCell.measuredHeightOfCell(posts[(indexPath as NSIndexPath).row], imageHeight: self.view.bounds.size.width, maxWidth: maxCellWidth())
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.posts.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! FeedTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FeedTableViewCell
 
-        let model = posts[indexPath.row]
+        let model = posts[(indexPath as NSIndexPath).row]
         cell.update(model, maxWidth: maxCellWidth())
 
         return cell

@@ -13,7 +13,7 @@ public typealias LayoutConstraints = [NSLayoutConstraint]?
 
 extension UIView {
 
-    public func addConstraintsWithVFL(VFL: String, connectingViews: [String:UIView]?, metrics: [String:AnyObject]?) -> LayoutConstraints {
+    public func addConstraintsWithVFL(_ VFL: String, connectingViews: [String:UIView]?, metrics: [String:AnyObject]?) -> LayoutConstraints {
         if let superview = superview {
             translatesAutoresizingMaskIntoConstraints = false
             var views = ["view": self, "superview": superview]
@@ -22,7 +22,7 @@ extension UIView {
                     views[key] = value
                 }
             }
-            let constraints = NSLayoutConstraint.constraintsWithVisualFormat(VFL, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
+            let constraints = NSLayoutConstraint.constraints(withVisualFormat: VFL, options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: views)
             superview.addConstraints(constraints)
             return constraints
         } else {
@@ -30,7 +30,7 @@ extension UIView {
         }
     }
 
-    public func addConstraintsWithVFL(VFL: String, metrics: [String:AnyObject]?) -> LayoutConstraints {
+    public func addConstraintsWithVFL(_ VFL: String, metrics: [String:AnyObject]?) -> LayoutConstraints {
         return addConstraintsWithVFL(VFL, connectingViews: nil, metrics: metrics)
     }
 
@@ -52,8 +52,8 @@ extension UIView {
         return optionalCombinedArrays
     }
 
-    public func debug_border(color: UIColor = UIColor.redColor()) {
-        self.layer.borderColor = color.CGColor
+    public func debug_border(_ color: UIColor = UIColor.red) {
+        self.layer.borderColor = color.cgColor
         self.layer.borderWidth = 1.0
     }
 }

@@ -14,7 +14,7 @@ protocol FeedInteractorInput {
 }
 
 protocol FeedInteractorOutput {
-    func showPosts(posts: [FeedPostModel])
+    func showPosts(_ posts: [FeedPostModel])
 }
 
 class FeedInteractor: BaseInteractor, FeedInteractorInput {

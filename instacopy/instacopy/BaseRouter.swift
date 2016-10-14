@@ -12,12 +12,12 @@ class BaseRouter: NSObject {
 
     weak var viewController: UIViewController?
     
-    func presentViewController(viewController: UIViewController, presentingViewController: UIViewController, animated: Bool, embedInNavigationController: Bool, completion: (() -> Void)?) {
+    func presentViewController(_ viewController: UIViewController, presentingViewController: UIViewController, animated: Bool, embedInNavigationController: Bool, completion: (() -> Void)?) {
         var modalViewController = viewController
         if (embedInNavigationController) {
             modalViewController = UINavigationController(rootViewController: viewController)
         }
-        presentingViewController.presentViewController(modalViewController, animated: animated, completion: completion)
+        presentingViewController.present(modalViewController, animated: animated, completion: completion)
     }
 
 }

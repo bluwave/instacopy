@@ -10,7 +10,7 @@ import UIKit
 
 class LoginInteractor: BaseInteractor {
 
-    func login(username: String, password: String, completionHandler: ((error: NSError?) -> Void)?)
+    func login(_ username: String, password: String, completionHandler: ((_ error: NSError?) -> Void)?)
     {
         
     }

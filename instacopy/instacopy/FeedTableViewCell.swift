@@ -16,30 +16,30 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var commentContainer: UIView!
     @IBOutlet weak var commentContainerHeightConstraint: NSLayoutConstraint!
 
-    static let usernameAttribs = [NSForegroundColorAttributeName: UIColor.blueColor(), NSFontAttributeName: TypographyType.User.font()]
-    static let captionAttribs = [NSForegroundColorAttributeName: UIColor.blackColor(), NSFontAttributeName: TypographyType.Caption.font()]
+    static let usernameAttribs = [NSForegroundColorAttributeName: UIColor.blue, NSFontAttributeName: TypographyType.user.font()]
+    static let captionAttribs = [NSForegroundColorAttributeName: UIColor.black, NSFontAttributeName: TypographyType.caption.font()]
 
     override func awakeFromNib() {
         super.awakeFromNib()
         postImageView.layer.masksToBounds = true
     }
 
-    func update(model: FeedPostModel, maxWidth: CGFloat) {
-        postImageView.sd_setImageWithURL(model.standardResolutionImageURL)
-        captionLabel.attributedText = self.dynamicType.attributedLabelFromUserComment(model.user, userComment: model.caption)
+    func update(_ model: FeedPostModel, maxWidth: CGFloat) {
+        postImageView.sd_setImage(with: model.standardResolutionImageURL as URL!)
+        captionLabel.attributedText = type(of: self).attributedLabelFromUserComment(model.user, userComment: model.caption)
         updateComments(model, maxWidth: maxWidth)
     }
 
-    private func updateComments(model: FeedPostModel, maxWidth: CGFloat) {
-        commentContainer.subviews.map { $0.removeFromSuperview() }
+    fileprivate func updateComments(_ model: FeedPostModel, maxWidth: CGFloat) {
+        commentContainer.subviews.forEach { $0.removeFromSuperview() }
         var previousView: UIView?
-        for (index,comment) in model.comments.enumerate() {
-            let attributedComment = self.dynamicType.attributedLabelFromUserComment(comment.user, userComment: comment.text)
+        for (_,comment) in model.comments.enumerated() {
+            let attributedComment = type(of: self).attributedLabelFromUserComment(comment.user, userComment: comment.text)
             let commentLabel = UILabel()
             commentLabel.numberOfLines = 0
             commentLabel.attributedText = attributedComment
             commentContainer.addSubview(commentLabel)
-            commentLabel.pinToLeftAndRightOfSuperView()
+            _ = commentLabel.pinToLeftAndRightOfSuperView()
             var vfl = "V:"
             var metrics = [String: AnyObject]()
             var connectingViews = [String: UIView]()
@@ -51,27 +51,27 @@ class FeedTableViewCell: UITableViewCell {
             }
 
             vfl += "-(padding)-[view(h)]"
-            metrics["h"] = self.dynamicType.measuredHeightOfAttributedString(attributedComment, maxWidth: maxWidth)
-            metrics["padding"] = self.dynamicType.padBetweenComments()
+            metrics["h"] = type(of: self).measuredHeightOfAttributedString(attributedComment, maxWidth: maxWidth) as AnyObject?
+            metrics["padding"] = type(of: self).padBetweenComments() as AnyObject?
 
-            commentLabel.addConstraintsWithVFL(vfl, connectingViews: connectingViews, metrics: metrics)
+            _ = commentLabel.addConstraintsWithVFL(vfl, connectingViews: connectingViews, metrics: metrics)
             previousView = commentLabel
         }
     }
 
-    private class func attributedLabelFromUserComment(user: String, userComment: String) -> NSAttributedString {
+    fileprivate class func attributedLabelFromUserComment(_ user: String, userComment: String) -> NSAttributedString {
         let comment: NSMutableAttributedString = NSMutableAttributedString(string: user + "  ", attributes: usernameAttribs)
-        comment.appendAttributedString(NSAttributedString(string: userComment, attributes: captionAttribs))
+        comment.append(NSAttributedString(string: userComment, attributes: captionAttribs))
         return comment
     }
 
-    class func measuredHeightOfAttributedString(attributedString:NSAttributedString, maxWidth: CGFloat) -> CGFloat {
-        let options: NSStringDrawingOptions = [.UsesLineFragmentOrigin, .UsesFontLeading]
-        let size = attributedString.boundingRectWithSize(CGSizeMake(maxWidth, CGFloat.max), options: options, context: nil)
+    class func measuredHeightOfAttributedString(_ attributedString:NSAttributedString, maxWidth: CGFloat) -> CGFloat {
+        let options: NSStringDrawingOptions = [.usesLineFragmentOrigin, .usesFontLeading]
+        let size = attributedString.boundingRect(with: CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude), options: options, context: nil)
         return ceil(size.size.height)
     }
 
-    class func measuredHeightOfCell(model: FeedPostModel, imageHeight: CGFloat, maxWidth: CGFloat) -> CGFloat {
+    class func measuredHeightOfCell(_ model: FeedPostModel, imageHeight: CGFloat, maxWidth: CGFloat) -> CGFloat {
         let caption = FeedTableViewCell.attributedLabelFromUserComment(model.user, userComment: model.caption)
 
         var comments = [caption]
